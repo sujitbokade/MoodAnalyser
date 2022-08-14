@@ -1,17 +1,25 @@
 public class MoodAnalyser {
-    String analyseMood (String string){
-        if(string.toLowerCase().contains("sad"))
-            return "SAD";
-        else if (string.toLowerCase().contains("happy"))
-            return "HAPPY";
-        return string;
-    }
+    String message;
 
     public static void main(String[] args) {
         MoodAnalyser moodAnalyser = new MoodAnalyser();
-        String happyMood = moodAnalyser.analyseMood("I am in Happy Mood");
-        System.out.println("My Mood is: "+happyMood);
-        String sadMood = moodAnalyser.analyseMood("I am in Sad Mood");
-        System.out.println("My Mood is: "+sadMood);
+        String happyMood = moodAnalyser.analyseMood();
+        System.out.println("My mood is :"+happyMood);
+        String sadMood = moodAnalyser.analyseMood();
+        System.out.println("My Mood is :"+sadMood);
+    }
+
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
+
+    public MoodAnalyser() {
+    }
+
+    public String analyseMood (){
+        if(message.toLowerCase().contains("sad"))
+            return "SAD";
+        else
+            return "HAPPY";
     }
 }
